@@ -33,24 +33,29 @@ html,body{
 
 .inputBox{
     position: relative;
-    max-width: 850px;
+    max-width: 960px;
     width: 100%;
+    height: 3rem;
     background-color: white;
     padding: 1rem 1rem;
     border-radius: 8px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
+.searchIcon{
+    z-index: 4;
+}
+
 .searchInput{
     position: absolute;
     width: 88%;
-    max-width: 960px;
+    max-width: 850px;
     height: 100%;
     margin: 1rem 1rem;
     outline: none;
     border: none;
     background-color: white;
     top: -1rem;
-    right: 2rem;
-
+    left: 1.5rem;
+    border-radius: 8px;
 }
