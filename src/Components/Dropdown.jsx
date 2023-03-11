@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dropdown = () =>{
     return <div className='flex flex-col dropdownProfile'>
-        <ul className='flex flex-col gap-4'>
+        <ul className='flex flex-col gap-4 cursor-pointer'>
             <li>My Orders</li>
             <li>Saved Address</li>
             <li>My Wallet</li>
