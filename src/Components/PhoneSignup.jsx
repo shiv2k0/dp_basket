@@ -78,50 +78,52 @@ const PhoneSignup = () => {
             <Toaster toastOptions={{ duration: 4000 }} />
             <div id="recaptcha-container"></div>
             {user ? (
-              <div className="flex justify-center mx-auto">
+              <div className="center">
                 <div className="successContainer bg-yellow-50">
                   👍 Login Success
                 </div>
               </div>
             ) : (
-              <div className="flex justify-center mx-auto my-10">
-                <div className="otpContainer bg-yellow-50">
-                  <div className="flex items-center gap-2 mt-14 mb-10">
-                    <BsFillShieldLockFill className="text-3xl" />
-                    <span className="text-2xl">Authentication</span>
-                  </div>
-                  <div className="">
-                    <label htmlFor="otp" className="font-bold text-xl">
-                      Enter your OTP
-                    </label>
-                  </div>
-                  <div>
-                    <OtpInput
-                      value={otp}
-                      onChange={setOtp}
-                      OTPLength={6}
-                      otpType="number"
-                      disabled={false}
-                      autofocus
-                      className="otp-container"
-                    ></OtpInput>
-                  </div>
-                  <div>
-                    <button
-                      onClick={onOTPVerify}
-                      className="bg-yellow-300 hover:bg-yellow-400 text-white font-extrabold my-10 w-[18.5rem] shadow-xl py-2 px-10  rounded focus:outline-none focus:shadow-outline relative right-2 flex items-center justify-center gap-2"
-                    >
-                      {loading && <CgSpinner className="animate-spin" />}
-                      Verify
-                    </button>
+              <>
+                <div className="center">
+                  <div className="otpContainer bg-yellow-50">
+                    <div className="flex items-center gap-2 mt-14 mb-10">
+                      <BsFillShieldLockFill className="text-3xl" />
+                      <span className="text-2xl">Authentication</span>
+                    </div>
+                    <div className="">
+                      <label htmlFor="otp" className="font-bold text-xl">
+                        Enter your OTP
+                      </label>
+                    </div>
+                    <div>
+                      <OtpInput
+                        value={otp}
+                        onChange={setOtp}
+                        OTPLength={6}
+                        otpType="number"
+                        disabled={false}
+                        autofocus
+                        className="otp-container"
+                      ></OtpInput>
+                    </div>
+                    <div>
+                      <button
+                        onClick={onOTPVerify}
+                        className="bg-yellow-300 hover:bg-yellow-400 text-white font-extrabold my-10 w-[18.5rem] shadow-xl py-2 px-10  rounded focus:outline-none focus:shadow-outline relative right-2 flex items-center justify-center gap-2"
+                      >
+                        {loading && <CgSpinner className="animate-spin" />}
+                        Verify
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         ) : (
           <>
-            <div className="flex justify-center">
+            <div className="flex justify-center mx-auto">
               <div className="loginContainer ">
                 <div className="loginLeft">
                   <div className="welcomeText">Welcome to</div>
