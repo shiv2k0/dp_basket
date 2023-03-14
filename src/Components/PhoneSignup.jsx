@@ -23,7 +23,6 @@ const PhoneSignup = () => {
   // };
 
   const onCaptchVerify = () => {
-    if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
         {
@@ -31,11 +30,10 @@ const PhoneSignup = () => {
           callback: (response) => {
             onSignup();
           },
-          "expired-callback": () => {},
         },
         auth
       );
-    }
+    
   };
   const onSignup = () => {
     setLoading(true);
@@ -76,7 +74,7 @@ const PhoneSignup = () => {
         {showOTP ? (
           <div>
             <Toaster toastOptions={{ duration: 4000 }} />
-            <div id="recaptcha-container"></div>
+            
             {user ? (
               <div className="center">
                 <div className="successContainer bg-yellow-50">
@@ -156,6 +154,7 @@ const PhoneSignup = () => {
                           placeholder="Name"
                         />
                       </div> */}
+                      <div id="recaptcha-container"></div>
                       <div className="bg-white mx-10">
                         <label
                           className="block text-gray-700 text-sm font-bold mb-2"
@@ -165,7 +164,7 @@ const PhoneSignup = () => {
                         </label>
                         <PhoneInput
                           className="shadow flex gap-4 border rounded  py-2 px-3 text-gray-700 mb-3  focus:outline-none focus:shadow-outline"
-                          country={"in"}
+                          country="in"
                           value={ph}
                           onChange={setPh}
                         />
